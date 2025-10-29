@@ -1,0 +1,27 @@
+MIF = Memory Initialization file
+
+PC = endereço da instrução que será realizada
+Reg. File -> no nosso caso, 32 registradores
+
+ Inst. mem, data mem, datapath, são todos entidades (componentes no vhdl)
+Fetch <- buscar instrução na mem, o pc que fornece o endereço para isto acontecer
+saida da entidade datapath vai ser um sinal, que esse sinal recebe a saida do pc, fazer com portmap
+Pode criar uma entidade para o processador mips, (datapath e UC), mas aceita não fazer
+caso fazar uma entidade para o processador, ficará 3 entidades dentro de computador 
+Para conoseguir o endereço efetivo do load word, é necessário somar o rs (5 bits, de 21 a 26) com o imediato (16 bits que precisam ser extendidos para 32 bits, 15 ao 0)
+utilizar a ula para fazer a soma do endeço mais o imediato para conseguir o endereço efetivo para lw, 
+25 a 21 para a entrada a1
+20 a 16 o endereco efetivo para o lw
+BTA (Branch Target Address) = (PC + 4) + sign-extended(imm) << 2
+Dois deslocamentos a esquerda é igual a multiplicar por 4
+um modulo para deslocar bit
+vai ter que usar o componente rcadder duas vezes
+
+Instrução Jal:
+JTA = {(PC + 4)31:28, addr << 2}
+desvio absoluto (multiplica por 4 também)
+a virgula acima serve para concatenar
+é um salto para um endereço absoluto
+
+Entender para a prova o que é bta, jta.
+teste bank?
