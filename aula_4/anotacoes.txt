@@ -1,0 +1,4 @@
+Test bank, uma entidade de corpo vazio, um módulo, instancia a ula, serve pra gerar sinais para a ula para debuggar
+UUT = unity under test
+Vai ter um testbank com um datapath dentro dele?
+Contar memória, sinais de memória, alterar na hora, testar todos os componentes do ava
